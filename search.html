@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav-bar</title>
+    <style></style>
+</head>
+<link rel="stylesheet" href="./style.css">
+<body>
+</body>
+
+</html>
+<script type="module">
+    //1st part
+    import navbar from "./nvabar.js";
+   document.body.innerHTML=navbar();
+
+    //2nd part
+
+    var parent=document.getElementById("data");
+    var button_id=document.getElementById("getbutton")
+    button_id.addEventListener("click",get_data)
+
+    async function get_data(){
+        let name=document.getElementById("search").value 
+        
+        let res=await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
+        let data=await res.json()
+        
+        getItem(data.meals)
+    }
+    function getItem(n){
+     n.forEach(({strMealThumb,strMeal,strInstructions}) => {
+         let div=document.createElement("div")
+
+         let meal=document.createElement("p")
+         meal.innerText=strMeal;
+
+         let img=document.createElement("img")
+         img.src=strMealThumb;
+
+         let Instructions=document.createElement("p")
+          Instructions.innerText=strInstructions
+         
+         div.append(img,meal,Instructions)
+          parent.append(div)
+     });
+
+    }
+
+</script>

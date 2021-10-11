@@ -1,0 +1,49 @@
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 4%;
+    padding-right: 4%;
+    border: solid 1px black;
+    background-color: aqua;
+    border-radius: 6px;
+}
+#options{
+    display: flex;
+    justify-content: space-between;
+}
+#options h3{
+    padding-left: 30px;
+    padding-right: 10px;
+}
+#search{
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+#getbutton{
+    width: 80px;
+    margin-left: -350px;
+    height: 30px;
+    border-radius: 4px;
+    margin-top: 12px;
+}
+#data{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+    margin-top: 10px;
+}
+#data div img{
+    width: 100%;
+    height: 60;
+}
+#data div p:nth-child(2){
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(143, 22, 190);
+    font-style: italic;
+}
+#data div p{
+    font-size: 13px;
+    
+}
